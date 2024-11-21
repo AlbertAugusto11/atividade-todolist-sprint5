@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { FruitContext } from "../../providers/FruitContext";
 
-export const FruitForm = ({addFruit}) => {
+export const FruitForm = () => {
     const [name, setName] = useState("");
     const [price, setPrice] = useState("");
+    const {addFruit} = useContext(FruitContext)
 
     const submit = (e) => {
         e.preventDefault();

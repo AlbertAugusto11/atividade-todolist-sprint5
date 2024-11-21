@@ -1,19 +1,14 @@
-import { useState } from "react";
 import { FruitForm } from "../../components/FruitForm";
 import { FruitList } from "../../components/FruitList";
 
 export const HomePage = () => {
-   const [fruitList, setFruitList] = useState([]);
-
-   const addFruit = (fruit) => {
-      const newFruit = { ...fruit, id: crypto.randomUUID() };
-      setFruitList([...fruitList, newFruit]);
-   };
 
    return (
       <main>
-         <FruitForm addFruit={addFruit} />
-         <FruitList fruitList={fruitList} setFruitList={setFruitList} />
+         <h1>Esta é uma Lista de Frutas</h1>
+         <FruitForm />
+         <FruitList />
+         <p>Coloque o nome da fruta e o valor e clique em Cadastrar</p>
       </main>
    );
 };
